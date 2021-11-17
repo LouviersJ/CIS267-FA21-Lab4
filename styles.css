@@ -1,46 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&display=swap%27');
-
-* {
-  box-sizing: border-box;
-}
-
+html,
 body {
-  background: #efefbb;
-  background: linear-gradient(to right, #d4d3dd, #efefbb);
-  font-family: 'Lato', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
+  height: 100%;
+  /* overflow-y: hidden; */
 }
 
-h1 {
-  letter-spacing: 3px;
+#party {
+  background-color: #fff;
+  /* position: sticky; */
+  /* left: 0; */
+  margin-top: 70px;
+  min-height: 30vh;
+  /* max-height: 40vh; */
+  width: 100%;
+  height: auto;
 }
 
-.poke-container {
+#party-pokemon {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-items: space-between;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px;
+}
+
+#filtered-pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#all {
+  /* position: relative; */
+  margin-top: 70px;
+}
+
+#all-pokemon {
+  /* overflow: scroll; */
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .pokemon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-basis: 20%;
+  flex-basis: 15%;
   background-color: #eee;
   border-radius: 10px;
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
   margin: 10px;
   padding: 20px;
   text-align: center;
-  transform: scale(1.0);
+  transform: scale(1);
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -55,12 +66,11 @@ h1 {
   width: 100px;
   height: 100px;
   text-align: center;
-
 }
 
 .pokemon .img-container img {
   /* max-width: 90%; */
-  width:120%;
+  width: 120%;
   margin-top: 00px;
 }
 
@@ -76,7 +86,7 @@ h1 {
 }
 
 .pokemon .info .name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   margin: 15px 0 7px;
   letter-spacing: 1px;
@@ -86,4 +96,17 @@ h1 {
   font-size: 0.7em;
   text-transform: capitalize;
   font-weight: 200;
+}
+
+footer {
+  min-height: 100px;
+  padding: 1rem;
+  background-color: #ddd;
+  color: black;
+  text-align: center;
+  display: flex;
+}
+
+footer p {
+  margin: auto;
 }
