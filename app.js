@@ -49,9 +49,7 @@ const getPokemon = async function (id) {
         let pokemon = [];
         for (let i = 1; i <= pokemon_count; i++) {
           let p = await getPokemon(i);
-          if (p.name === "mr-mime") {
-            p.name = "Mr. Mime";
-          }
+          
           p.isFavorite = false;
           pokemon.push(p);
         }
@@ -116,15 +114,10 @@ const getPokemon = async function (id) {
           return `${pokemon.types[0].type.name}`;
         }
       },
+      
       getGUID() {
         return Math.floor(Math.random() * 1000000);
       },
-    },
-    computed: {
-      createBackgroundString() {
-        return `linear-gradient(90deg, ${colors[pokemon.types[0].type.name]} 50%, ${colors[pokemon.types.length > 1 ? 
-          pokemon.types[1].type.name : pokemon.types[0].type.name]})`;
-      }
     },
   
     mounted() {

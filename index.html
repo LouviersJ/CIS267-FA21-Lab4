@@ -40,7 +40,11 @@
           class="pokemon"
           v-for="pokemon in partyPokemon"
             @click="removePokemonFromParty(pokemon)"
-            :style = "{backgroundImage: createBackgroundString}"
+            :style = "{backgroundImage: 
+              `linear-gradient(45deg, ${colors[pokemon.types[0].type.name]},
+              white,  
+              ${colors[pokemon.types.length == 2 ? pokemon.types[1].type.name : 
+                pokemon.types[0].type.name]}`}"
             >
             <div class="img-container">
               <img
@@ -65,6 +69,11 @@
           class="pokemon"
           v-for="pokemon in filteredPokemon"
           @click="addPokemonToParty(pokemon)"
+          :style = "{backgroundImage: 
+            `linear-gradient(45deg, ${colors[pokemon.types[0].type.name]},
+            white,  
+            ${colors[pokemon.types.length == 2 ? pokemon.types[1].type.name : 
+              pokemon.types[0].type.name]}`}"
           >
             <div class="img-container">
               <img
@@ -90,6 +99,11 @@
               class="pokemon"
               v-for="pokemon in allPokemon"
               @click="addPokemonToParty(pokemon)"
+              :style = "{backgroundImage: 
+                `linear-gradient(45deg, ${colors[pokemon.types[0].type.name]},
+                white,  
+                ${colors[pokemon.types.length == 2 ? pokemon.types[1].type.name : 
+                  pokemon.types[0].type.name]}`}"
               >
               <!--
               </div>:style= "background-image: linear-gradient(90deg, {{colors[pokemon.types[0].type.name]}} 50%, #00FFFF {{colors[pokemon.types.length > 1 ? pokemon.types[1].type.name : null]}})"
